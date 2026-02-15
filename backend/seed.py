@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime, timedelta
 from faker import Faker
 from sqlalchemy.orm import Session
-from backend.models import SessionLocal, CfdiComprobante, CfdiEmisor, CfdiReceptor, CfdiConcepto, Pago, engine
+from models import SessionLocal, CfdiComprobante, CfdiEmisor, CfdiReceptor, CfdiConcepto, Pago, engine
 
 fake = Faker('es_MX')
 
