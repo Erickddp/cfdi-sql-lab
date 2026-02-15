@@ -15,12 +15,19 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="CFDI SQL LAB")
 
-origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000,https://sql.erickddp.com")
-origins = [origin.strip() for origin in origins_str.split(",") if origin.strip()]
+# Definir orígenes explícitos
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://sql.erickddp.com",
+    "https://www.sql.erickddp.com",
+    "https://cfdi-sql-lab.vercel.app"
+]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_origin_regex=r"^https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
