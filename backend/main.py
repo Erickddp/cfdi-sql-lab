@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from datetime import datetime
 
 from models import Base, engine, SessionLocal, CfdiComprobante, CfdiEmisor, CfdiReceptor, CfdiConcepto, Pago
-from .seed import seed_database as run_seed
+from seed import seed_database as run_seed
 
 # Create tables
 Base.metadata.create_all(bind=engine)
