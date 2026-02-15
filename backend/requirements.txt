@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+sqlalchemy
+faker
+pydantic
+# SQLite support is built-in
+python-multipart
