@@ -7,7 +7,7 @@ from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
 
-from .models import Base, engine, SessionLocal, CfdiComprobante, CfdiEmisor, CfdiReceptor, CfdiConcepto, Pago
+from models import Base, engine, SessionLocal, CfdiComprobante, CfdiEmisor, CfdiReceptor, CfdiConcepto, Pago
 from .seed import seed_database as run_seed
 
 # Create tables
