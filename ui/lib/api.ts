@@ -1,11 +1,7 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
 
 if (process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_API_URL) {
-    if (typeof window !== 'undefined') {
-        const errorMsg = 'Error crítico: API_URL no configurada en entorno de producción.';
-        console.error(errorMsg);
-        alert(errorMsg);
-    }
+    console.warn('⚠️ ADVERTENCIA: NEXT_PUBLIC_API_URL no está definida. Las peticiones usarán localhost.');
 }
 
 async function fetchJson(endpoint: string, options: RequestInit = {}) {
