@@ -3,5 +3,6 @@ uvicorn
 sqlalchemy
 faker
 pydantic
-# SQLite support is built-in
 python-multipart
+# Database adapters
+psycopg2-binary
